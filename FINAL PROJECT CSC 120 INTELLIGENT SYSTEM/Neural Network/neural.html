@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Neural Network</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="img/icon.png" />
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Intelligent System</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:5500/main.html">Home</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <section class="bg-dark p-2 text-center">
+            <div class="container">
+                <p class="text-white">.</p>
+            </div>
+        </section>
+
+        <h1>Neural Network</h1>
+        <h1>( Fashion Product Classification )</h1>
+        <section class="features-icons bg-light text-center">
+            <h1>About Dataset</h1>
+            <p> </p>
+            <h3>Content</h3>
+                            <p class="lead mb-0">Zalando article photos make up the Fashion-MNIST dataset, which has a training set of 60,000 samples and a test set of 10,000 examples. Each illustration is a 28x28 grayscale graphic paired with a label drawn from one of ten classes. When testing machine learning methods, Zalando wants Fashion-MNIST to be a simple drop-in substitute for the original MNIST dataset. The image size and split structure between training and testing are the same.
+                                <p class="lead mb-0">For the Dataset <a href="https://www.kaggle.com/datasets/zalando-research/fashionmnist">Click Here</a>.
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Showcases-->
+        <section class="showcase">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/load.png')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Load the Dataset</h2>
+                        <p class="lead mb-0">Loading a dataset involves reading and importing data into a program or framework, typically from files or external sources, to make it available for further processing or analysis.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/train.png')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Training and Evaluation</h2>
+                        <p class="lead mb-0">Training allows the model to learn from labeled data, while evaluation provides a quantitative assessment of its performance on unseen data. </p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/class.png')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Show 10 Classes</h2>
+                        <p class="lead mb-0">0 T-shirt/top</p>
+                        <p class="lead mb-0">1 Trouser</p>
+                        <p class="lead mb-0">2 Pullover</p>
+                        <p class="lead mb-0">3 Dress</p>
+                        <p class="lead mb-0">4 Coat</p>
+                        <p class="lead mb-0">5 Sandal</p>
+                        <p class="lead mb-0">6 Shirt</p>
+                        <p class="lead mb-0">7 Sneaker</p>
+                        <p class="lead mb-0">8 Bag</p>
+                        <p class="lead mb-0">9 Ankle boot</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/seq.png')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Sequential and model</h2>
+                        <p class="lead mb-0">Sequential model provides a convenient and intuitive way to construct deep learning models by stacking layers sequentially. </p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/epochs.png')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Epochs</h2>
+                        <p class="lead mb-0">Epochs is to Selecting the appropriate number of epochs is important to ensure the model achieves good performance while avoiding underfitting or overfitting.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/accmodel.png')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Accuracy and Model Performance</h2>
+                        <p class="lead mb-0">Making predictions and evaluating the performance of a machine learning model enable us to measure its accuracy, make informed decisions, select the best model, iteratively improve its performance, and assess its practical implications.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/report.png')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Classification Report</h2>
+                        <p class="lead mb-0">Classification report is essential for evaluating and interpreting the performance of a classification model. It provides detailed metrics on a per-class basis, average metrics across all classes, and insights into the model's strengths and weaknesses. </p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/accuracy.png')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Accuracy on train and test</h2>
+                        <p class="lead mb-0">Measuring accuracy on both the training and test datasets is for evaluating the model's performance, detecting overfitting, assessing generalization capabilities, comparing different models, facilitating iterative improvement, and establishing performance baselines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials-->
+        <!-- <section class="testimonials text-center bg-light">
+            <div class="container">
+                <h2 class="mb-5">For the UI ( User Interface )</h2>
+                <div class="center">
+                    <a href="http://127.0.0.1:5500/Logistic%20Regression%20UI/logisticUI.html"><button>Click Here</button></a>
+                  </div> -->
+                <!-- <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
+                            <h5>Margaret E.</h5>
+                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                        </div>
+                    </div> 
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
+                            <h5>Fred S.</h5>
+                            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+                        </div>
+                    </div>
+                     <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
+                            <h5>Sarah W.</h5>
+                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                        </div>
+                    </div>
+                </div> -->
+            <!-- </div>
+        </section> -->
+        <!-- Call to Action-->
+        <!-- <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+
+                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
+                                </div>
+                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    <p>To activate this form, sign up at</p>
+                                    <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Footer-->
+        <!-- <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2023. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer> -->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <footer class="bg-dark p-2 text-center">
+            <div class="container">
+                <p class="text-white">All Right Reserved 2023</p>
+            </div>
+        </footer>
+
+    </body>
+</html>

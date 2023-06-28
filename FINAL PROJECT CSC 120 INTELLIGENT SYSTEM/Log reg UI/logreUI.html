@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Prediction</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="img/icon.png" />
+
+</head>
+<body>
+  <h1>Diabetes Prediction</h1>
+    <div class="container">
+      <form id="diabetesForm">
+        <!-- <table>
+          <tr>
+            <td><label for="age">Number of Pregnancies:</label></td>
+            <td><input type="number" id="age" name="age" required></td>
+          </tr>
+          <tr>
+            <td><label for="bmi">Glucose Level:</label></td>
+            <td><input type="number" id="bmi" name="bmi" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td><label for="n_pregnant">Blood Pressure:</label></td>
+            <td><input type="number" id="n_pregnant" name="n_pregnant" required></td>
+          </tr>
+          <tr>
+            <td><label for="glucose">Skin Thickness:</label></td>
+            <td><input type="number" id="glucose" name="glucose" required></td>
+          </tr>
+          <tr>
+            <td><label for="bloodPressure">Insulin:</label></td>
+            <td><input type="number" id="bloodPressure" name="bloodPressure" required></td>
+          </tr>
+          <tr>
+            <td><label for="thickness">BMI:</label></td>
+            <td><input type="number" id="thickness" name="thickness" required></td>
+          </tr>
+          <tr>
+            <td><label for="insulin">Diabetes Pedigree Function:</label></td>
+            <td><input type="number" id="insulin" name="insulin" required></td>
+          </tr>
+          <tr>
+            <td><label for="pedigree">Age:</label></td>
+            <td><input type="number" id="pedigree" name="pedigree" step="0.01" required></td>
+          </tr>
+        </table> -->
+        <table>
+          <tr>
+            <td><label for="age">Number of Pregnancies:</label></td>
+            <td><input type="number" id="n_pregnant" name="n_pregnant" required></td>
+          </tr>
+          <tr>
+            <td><label for="glucose">Glucose Level:</label></td>
+            <td><input type="number" id="glucose" name="glucose" required></td>
+          </tr>
+          <tr>
+            <td><label for="bloodPressure">Blood Pressure:</label></td>
+            <td><input type="number" id="bloodPressure" name="bloodPressure" required></td>
+          </tr>
+          <tr>
+            <td><label for="thickness">Skin Thickness:</label></td>
+            <td><input type="number" id="thickness" name="thickness" required></td>
+          </tr>
+          <tr>
+            <td><label for="insulin">Insulin:</label></td>
+            <td><input type="number" id="insulin" name="insulin" required></td>
+          </tr>
+          <tr>
+            <td><label for="bmi">BMI:</label></td>
+            <td><input type="number" id="bmi" name="bmi" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td><label for="pedigree">Diabetes Pedigree Function:</label></td>
+            <td><input type="number" id="pedigree" name="pedigree" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td><label for="age">Age:</label></td>
+            <td><input type="number" id="age" name="age" required></td>
+          </tr>
+        </table>
+        <button type="submit">Predict</button>
+      </form>
+      <div id="result"></div>
+    </div>
+
+  <script>
+    function predictDiabetes() {
+      // Get the input values
+      // var age = parseFloat(document.getElementById("age").value);
+      // var bmi = parseFloat(document.getElementById("bmi").value);
+      // var n_pregnant = parseFloat(document.getElementById("n_pregnant").value);
+      // var glucose = parseFloat(document.getElementById("glucose").value);
+      // var bloodPressure = parseFloat(document.getElementById("bloodPressure").value);
+      // var thickness = parseFloat(document.getElementById("thickness").value);
+      // var insulin = parseFloat(document.getElementById("insulin").value);
+      // var pedigree = parseFloat(document.getElementById("pedigree").value);
+
+      var n_pregnant = parseFloat(document.getElementById("n_pregnant").value);
+      var glucose = parseFloat(document.getElementById("glucose").value);
+      var bloodPressure = parseFloat(document.getElementById("bloodPressure").value);
+      var thickness = parseFloat(document.getElementById("thickness").value);
+      var insulin = parseFloat(document.getElementById("insulin").value);
+      var bmi = parseFloat(document.getElementById("bmi").value);
+      var pedigree = parseFloat(document.getElementById("pedigree").value);
+      var age = parseFloat(document.getElementById("age").value);
+
+      //var coefficients = [0.01674227, 0.08143367, 0.11405139, 0.03030578, -0.01309778, -0.00313347, -0.00103648, 1.05154243];
+
+      var coefficients = [0.11405139, 0.03030578,-0.01309778, -0.00313347, -0.00103648, 0.08143367, 1.05154243, 0.01674227];
+
+      var intercept = -7.51640748;
+
+      // Calculate the weighted sum of the input variables
+      // var weightedSum = age * coefficients[0] +
+      //                   bmi * coefficients[1] +
+      //                   n_pregnant * coefficients[2] +
+      //                   glucose * coefficients[3] +
+      //                   bloodPressure * coefficients[4] +
+      //                   thickness * coefficients[5] +
+      //                   insulin * coefficients[6] +
+      //                   pedigree * coefficients[7] +
+      //                   intercept;
+
+      var weightedSum = n_pregnant * coefficients[0] +
+                        glucose * coefficients[1] +
+                        bloodPressure * coefficients[2] +
+                        thickness * coefficients[3] +
+                        insulin * coefficients[4] +
+                        bmi * coefficients[5] +
+                        pedigree * coefficients[6] +
+                        age * coefficients[7] +
+                        intercept;
+
+      // Apply the logistic function to get the probability of having diabetes
+      var probability = 1 / (1 + Math.exp(-weightedSum));
+
+      // Set the threshold probability
+      var threshold = 0.5;
+
+      // Compute the predicted outcome
+      var outcome = probability >= threshold ? "diabetes" : "no diabetes";
+
+      // Display the prediction result
+      var resultElement = document.getElementById("result");
+      resultElement.textContent = "Prediction: Patient have " + outcome + ".";
+      }
+      document.getElementById("diabetesForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        predictDiabetes();
+      });
+  </script>
+</body>
+</html>
